@@ -45,6 +45,7 @@
 
         <activity android:name=".homepage.profile"></activity>
         <activity android:name=".homepage.cart"></activity>
+        <activity android:name=".homepage.CheckoutActivity"></activity>
 
 
 

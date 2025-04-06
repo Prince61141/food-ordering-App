@@ -3,6 +3,7 @@ package com.example.foodorderingapp.homepage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +43,7 @@ public class cart extends AppCompatActivity {
             @Override
             public void onCartTotalUpdated(double subtotal, double gst, double deliveryFee, double total) {
                 cartTotalText.setText("Subtotal: ₹" + String.format("%.2f", subtotal));
-                gstText.setText("GST (18%): ₹" + String.format("%.2f", gst));
+                gstText.setText("GST (9%): ₹" + String.format("%.2f", gst));
                 deliveryFeeText.setText("Delivery Fee: ₹" + String.format("%.2f", deliveryFee));
                 finalAmountText.setText("Total: ₹" + String.format("%.2f", total));
             }
@@ -53,6 +54,20 @@ public class cart extends AppCompatActivity {
         // Show initial total
         double initialTotal = calculateTotal(cartItems);
         cartTotalText.setText("Total: ₹" + initialTotal);
+
+        Button checkoutBtn = findViewById(R.id.btnCheckout);
+        TextView totalAmountText = findViewById(R.id.finalAmountText); // e.g., "Total: ₹550"
+
+        checkoutBtn.setOnClickListener(v -> {
+            String totalText = totalAmountText.getText().toString(); // e.g., "Total: ₹550"
+            String amountOnly = totalText.replace("Total: ₹", "");
+
+            Intent intent = new Intent(cart.this, CheckoutActivity.class);
+            intent.putExtra("total_amount", amountOnly);
+            startActivity(intent);
+        });
+
+
 
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
     }
