@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@color/orange"
+            android:onClick="goBackToHomepage"
+            android:src="@drawable/ic_back"
+            app:tint="@android:color/white" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Cart"
+            android:textColor="@color/red"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Cart Items -->
+    <LinearLayout
+        android:id="@+id/cartitem"
+        android:layout_width="407dp"
+        android:layout_height="409dp"
+        app:layout_constraintBottom_toTopOf="@+id/totalPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkout"
+        app:layout_constraintTop_toBottomOf="@+id/cartitem"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/cartTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Item Total: ₹ 37.100"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/gstText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Tax: ₹ 2.0"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/deliveryFeeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Delivery Services: ₹ 10.0"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/finalAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: ₹ 49.100"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:layout_width="330dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/orange"
+            android:text="Checkout"
+            android:textSize="18dp"
+            android:elevation="8dp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="15dp" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

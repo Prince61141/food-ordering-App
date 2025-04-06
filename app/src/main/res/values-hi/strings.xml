@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">food ordering app</string>
+    <string name="search_foods_and_kitchen">खाद्य पदार्थ और रसोई खोजें</string>
+    <string name="login_to_your_account">अपने अकाउंट में लॉग इन करें</string>
+    <string name="username">"प्रयोक्ता नाम "</string>
+    <string name="password">पासवर्ड</string>
+    <string name="forgot_password">पासवर्ड भूल गए?</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="not_yet_registered">अभी तक पंजीकृत नहीं?</string>
+    <string name="signup_now">अभी साइनअप करें</string>
+    <string name="signup_to_your_account">signup to your account</string>
+    <string name="username_or_email_id">उपयोगकर्ता नाम या ईमेल आईडी</string>
+    <string name="password1">पासवर्ड</string>
+    <string name="confirm_password">पासवर्ड की पुष्टि कीजिये</string>
+    <string name="signup">साइन अप करें</string>
+    <string name="are_you_register">क्या आप पंजीकृत हैं?</string>
+    <string name="login1">लॉग इन करें</string>
+    <string name="add">जोड़ना</string>
+    <string name="_129">₹129</string>
+    <string name="product_name_2">उत्पाद का नाम 2</string>
+    <string name="add1">जोड़ना</string>
+    <string name="_99">₹99</string>
+    <string name="product_name_1">उत्पाद का नाम 1</string>
+</resources>

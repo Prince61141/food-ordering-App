@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FoodOrderingApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:windowBackground">@color/white</item> <!-- Set your color here -->
+    </style>
+
+    <style name="Theme.FoodOrderingApp" parent="Base.Theme.FoodOrderingApp" />
+</resources>

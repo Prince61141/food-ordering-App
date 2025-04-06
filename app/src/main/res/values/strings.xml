@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">food ordering app</string>
+    <string name="search_foods_and_kitchen">Search foods and Kitchen</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="login">Login</string>
+    <string name="not_yet_registered">Not yet registered?</string>
+    <string name="signup_now">SignUp Now</string>
+    <string name="signup_to_your_account">signup to your account</string>
+    <string name="username_or_email_id">Username or email id</string>
+    <string name="password1">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Signup</string>
+    <string name="are_you_register">Are You register?</string>
+    <string name="login1">Login</string>
+    <string name="add">Add</string>
+    <string name="_129">₹129</string>
+    <string name="_120">₹120</string>
+    <string name="product_name_2">Product Name 2</string>
+    <string name="add1">Add</string>
+    <string name="_99">₹99</string>
+    <string name="product_name_1">Product Name 1</string>
+    <string name="burger">Burger</string>
+    <string name="password2">Password</string>
+</resources>

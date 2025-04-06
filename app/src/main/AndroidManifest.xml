@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodOrderingApp"
+        tools:targetApi="31">
+
+        <!-- Signup Activity -->
+        <activity
+            android:name=".signup.signup"
+            android:exported="true"
+            android:theme="@style/Theme.FoodOrderingApp"
+            tools:ignore="MissingClass">
+        </activity>
+
+        <!-- Intro Activity - Entry Point -->
+        <activity
+            android:name=".activity.introActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- BaseActivity -->
+        <activity
+            android:name=".activity.BaseActivity"
+            android:exported="true" />
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".login.Login"
+            android:exported="true" />
+
+        <activity android:name=".homepage.homepage" />
+
+        <activity android:name=".homepage.profile"></activity>
+        <activity android:name=".homepage.cart"></activity>
+
+
+
+    </application>
+
+</manifest>

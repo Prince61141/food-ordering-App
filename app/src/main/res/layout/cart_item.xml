@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pizza" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cartItemName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pizza"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnDecrease"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/orange"
+                            android:text="−"
+                            android:paddingHorizontal="1dp"
+                            android:paddingVertical="0dp"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtQuantity"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text="2"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btnIncrease"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/orange"
+                            android:text="+"
+                            android:paddingHorizontal="1dp"
+                            android:paddingVertical="0dp"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cartItemPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="₹ 99"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/cartItemPriceTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="₹ 198"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
