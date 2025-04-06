@@ -1,6 +1,7 @@
 package com.example.foodorderingapp.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,17 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        // If user is already logged in, redirect them to the home page
+        if (isLoggedIn) {
+            Intent intent = new Intent(Login.this, homepage.class);
+            startActivity(intent);
+            finish(); // Prevent the user from returning to login screen
+            return;
+        }
+
         dbHelper = new DatabaseHelper(this);
 
         username = findViewById(R.id.username);
@@ -44,8 +56,13 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
                 } else {
                     if (checkUserCredentials(user, pass)) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("isLoggedIn", true);
+                        editor.putString("id", user); // Store username or any other user data if needed
+                        editor.apply();
+
                         Toast.makeText(Login.this, "Login successful!", Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(Login.this, HomeActivity.class)); // Change to your home activity
                         Intent intent = new Intent(Login.this, homepage.class);
                         startActivity(intent);
                         finish();

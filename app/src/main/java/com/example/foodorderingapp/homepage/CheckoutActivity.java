@@ -17,21 +17,18 @@ import org.json.JSONObject;
 
 public class CheckoutActivity extends AppCompatActivity implements PaymentResultListener {
 
-    double totalAmount;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkout);
 
-        totalAmount = getIntent().getDoubleExtra("totalAmount", 0);
         TextView checkoutTotal = findViewById(R.id.checkoutTotalText);
 
         Intent intent = getIntent();
-        String totalAmount = intent.getStringExtra("total_amount");
+        String totalAmountString = intent.getStringExtra("total_amount");
 
+        double totalAmount = Double.parseDouble(totalAmountString);
         checkoutTotal.setText("Payable Amount: ₹" + totalAmount);
-
 
         Checkout.preload(getApplicationContext());
 
@@ -43,14 +40,18 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentResult
         Checkout checkout = new Checkout();
         checkout.setKeyID(BuildConfig.RAZORPAY_KEY);  // Use secure key
 
+        Intent intent = getIntent();
+        String totalAmountString = intent.getStringExtra("total_amount");
+        double totalAmount = Double.parseDouble(totalAmountString);
+
         try {
             JSONObject options = new JSONObject();
             options.put("name", "Food Ordering App");
             options.put("description", "Payment for order");
             options.put("currency", "INR");
             options.put("amount", totalAmount * 100); // amount in paise
-            options.put("prefill.email", "user@example.com");
-            options.put("prefill.contact", "9999999999");
+            options.put("prefill.email", "");
+            options.put("prefill.contact", "");
 
             checkout.open(CheckoutActivity.this, options);
         } catch (Exception e) {

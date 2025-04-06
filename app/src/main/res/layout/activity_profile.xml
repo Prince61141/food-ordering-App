@@ -20,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -50,18 +51,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btn_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_more_vert"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@android:color/white" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -85,15 +74,14 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Scrollable Content -->
-    <androidx.core.widget.NestedScrollView
+    <android.widget.ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="60dp"
-        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_image_container">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_background"
+        android:scrollbars="none"
+        android:layout_margin="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,16 +99,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:background="@color/white"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Name"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
+                        android:text="Name"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -129,22 +117,21 @@
                         android:id="@+id/tv_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Enter Your name"
                         android:layout_marginBottom="5dp"
-                        android:textSize="16sp"
+                        android:hint="Enter Your name"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
-
 
 
                     <!-- Email -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Email"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
+                        android:text="Email"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -152,10 +139,10 @@
                         android:id="@+id/tv_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColorHint="@color/black"
-                        android:hint="Enter Your Email Address"
                         android:layout_marginBottom="5dp"
+                        android:hint="Enter Your Email Address"
                         android:textColor="@color/black"
+                        android:textColorHint="@color/black"
                         android:textSize="16sp" />
 
 
@@ -163,9 +150,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Username"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
+                        android:text="Username"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -173,20 +160,19 @@
                         android:id="@+id/tv_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:hint="Username"
                         android:textColorHint="@color/black"
-                        android:layout_marginBottom="5dp"
                         android:textSize="16sp" />
-
 
 
                     <!-- Phone -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Phone"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
+                        android:text="Phone"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -194,9 +180,9 @@
                         android:id="@+id/tv_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:hint="Phone Number"
                         android:textColorHint="@color/black"
-                        android:layout_marginBottom="5dp"
                         android:textSize="16sp" />
 
 
@@ -204,9 +190,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Address"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
+                        android:text="Address"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -214,9 +200,9 @@
                         android:id="@+id/tv_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:hint="Enter Address"
                         android:textColorHint="@color/black"
-                        android:layout_marginBottom="5dp"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -233,8 +219,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:background="@color/white"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
 
@@ -266,8 +252,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:background="@color/white"
+                    android:orientation="horizontal"
                     android:padding="16dp">
 
                     <LinearLayout
@@ -300,11 +286,33 @@
                         android:text="Change"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white" />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/orange"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+
+
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+
+
+
+    </android.widget.ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

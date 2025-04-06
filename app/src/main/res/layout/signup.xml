@@ -85,13 +85,13 @@
                     android:textColorHighlight="@color/cardview_dark_background" />
 
 
-
                 <Button
                     android:id="@+id/signupButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/red"
+                    android:textColor="@color/white"
                     android:text="@string/signup"
                     android:textSize="18sp"
                     android:visibility="visible"

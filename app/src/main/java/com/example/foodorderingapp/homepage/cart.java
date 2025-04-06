@@ -67,8 +67,6 @@ public class cart extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
     }
 
