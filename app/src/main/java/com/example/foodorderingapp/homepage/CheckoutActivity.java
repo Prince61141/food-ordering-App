@@ -34,6 +34,8 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentResult
 
         Button btnPayNow = findViewById(R.id.btnPayNow);
         btnPayNow.setOnClickListener(v -> startPayment());
+
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
     }
 
     public void startPayment() {

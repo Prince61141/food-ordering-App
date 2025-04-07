@@ -20,6 +20,14 @@ public class CartManager {
         cartList.add(product);
     }
 
+    public static int getTotalItemCount() {
+        int count = 0;
+        for (Product p : cartList) {
+            count += p.quantity;
+        }
+        return count;
+    }
+
     public static List<Product> getCartItems() {
         return cartList;
     }

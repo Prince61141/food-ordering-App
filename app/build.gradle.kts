@@ -55,11 +55,12 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("com.razorpay:checkout:1.6.33")
-
+    implementation("com.google.android.gms:play-services-location:18.0.0")
 
 
     implementation(libs.recyclerview)
     implementation(libs.firebase.inappmessaging)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
