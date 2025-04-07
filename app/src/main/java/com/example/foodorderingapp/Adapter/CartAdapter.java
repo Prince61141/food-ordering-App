@@ -85,7 +85,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             subtotal += p.price * p.quantity;
         }
 
-        double gst = subtotal * 0.09; // 18% GST
+        double gst = subtotal * 0.09; // 9% GST
         double deliveryFee = subtotal > 0 ? 50 : 0; // ₹50 delivery only if cart has items
         double total = subtotal + gst + deliveryFee;
 

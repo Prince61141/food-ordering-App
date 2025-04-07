@@ -45,6 +45,11 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    packaging {
+        resources {
+            excludes += setOf("META-INF/NOTICE.md", "META-INF/LICENSE.md")
+        }
+    }
 }
 
 
@@ -56,7 +61,8 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation("com.razorpay:checkout:1.6.33")
     implementation("com.google.android.gms:play-services-location:18.0.0")
-
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
 
     implementation(libs.recyclerview)
     implementation(libs.firebase.inappmessaging)

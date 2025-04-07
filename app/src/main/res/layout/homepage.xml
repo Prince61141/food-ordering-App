@@ -176,6 +176,7 @@
                             android:layout_height="wrap_content"
                             android:text="Pizza"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -196,6 +197,7 @@
                             android:layout_height="wrap_content"
                             android:text="Burger"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -216,6 +218,7 @@
                             android:layout_height="wrap_content"
                             android:text="Pav Bhaji"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -236,6 +239,7 @@
                             android:layout_height="wrap_content"
                             android:text="Momo"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -256,6 +260,7 @@
                             android:layout_height="wrap_content"
                             android:text="Cake"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -276,6 +281,7 @@
                             android:layout_height="wrap_content"
                             android:text="Ice Cream"
                             android:textSize="13sp"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -334,6 +340,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Explore"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -359,6 +366,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Search"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -380,6 +388,7 @@
                 android:layout_marginTop="5dp"
                 android:text="My Order"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -403,6 +412,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Cart"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -427,6 +437,7 @@
                 android:layout_marginTop="5dp"
                 android:text="Account"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 

@@ -128,4 +128,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query(TABLE_PRODUCT, null, null, null, null, null, null);
     }
+    public boolean updatePassword(String username, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PASSWORD, hashPassword(newPassword));
+
+        int result = db.update(TABLE_USERS, values, COLUMN_USERNAME + "=?", new String[]{username});
+        db.close();
+        return result > 0;
+    }
+
 }

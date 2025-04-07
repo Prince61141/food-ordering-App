@@ -83,7 +83,8 @@ public class Login extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Login.this, "Forgot Password feature not implemented yet", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Login.this, ForgotPasswordActivity.class);
+                startActivity(intent);
             }
         });
 

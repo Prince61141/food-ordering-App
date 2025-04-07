@@ -54,8 +54,9 @@
         <activity android:name=".homepage.profile"></activity>
         <activity android:name=".homepage.cart"></activity>
         <activity android:name=".homepage.CheckoutActivity"></activity>
-
-        <receiver android:name=".homepage.NotificationReceiver" android:enabled="true" android:exported="false"/>
+        <activity android:name=".login.ForgotPasswordActivity"></activity>
+        <activity android:name=".login.NewPasswordActivity"></activity>
+        <activity android:name=".login.EnterOtpActivity"></activity>
 
     </application>
 
