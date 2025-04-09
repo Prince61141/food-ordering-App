@@ -67,10 +67,16 @@
 
         <ImageView
             android:id="@+id/account_profile"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_person" />
+            android:src="@drawable/icons8_person"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Profile Image"/>
+
     </androidx.cardview.widget.CardView>
 
     <!-- Scrollable Content -->
@@ -120,7 +126,7 @@
                         android:layout_marginBottom="5dp"
                         android:hint="Enter Your name"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/black"
+                        android:textColorHint="@color/gray"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -141,8 +147,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:hint="Enter Your Email Address"
+                        android:focusable="false"
+                        android:clickable="false"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/black"
+                        android:textColorHint="@color/gray"
                         android:textSize="16sp" />
 
 
@@ -162,7 +170,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:hint="Username"
-                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
                         android:textSize="16sp" />
 
 
@@ -182,7 +191,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:hint="Phone Number"
-                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
                         android:textSize="16sp" />
 
 
@@ -202,7 +212,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:hint="Enter Address"
-                        android:textColorHint="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
                         android:textSize="16sp" />
 
                 </LinearLayout>

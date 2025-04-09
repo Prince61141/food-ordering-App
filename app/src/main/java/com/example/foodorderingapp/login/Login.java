@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
                         SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putBoolean("isLoggedIn", true);
-                        editor.putString("id", user); // Store username or any other user data if needed
+                        editor.putString("email", user); // Store username or any other user data if needed
                         editor.apply();
 
                         Toast.makeText(Login.this, "Login successful!", Toast.LENGTH_SHORT).show();
