@@ -3,6 +3,7 @@ package com.example.foodorderingapp.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +26,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameText, priceText, txtQuantity, btnIncrease, btnDecrease, cartItemPriceTotal;
+        ImageView ItemImage;
 
         public ViewHolder(View view) {
             super(view);
+            ItemImage  = view.findViewById(R.id.cartItemImage);
             nameText = view.findViewById(R.id.cartItemName);
             priceText = view.findViewById(R.id.cartItemPrice);
             txtQuantity = view.findViewById(R.id.txtQuantity);
@@ -47,6 +50,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(CartAdapter.ViewHolder holder, int position) {
         Product product = cartItems.get(position);
+        holder.ItemImage.setImageResource(Integer.parseInt(product.image));
         holder.nameText.setText(product.name);
         holder.priceText.setText("₹" + product.price);
         holder.txtQuantity.setText(String.valueOf(product.quantity));

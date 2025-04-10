@@ -19,7 +19,7 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE products (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price REAL, brand TEXT, rating REAL)");
+        db.execSQL("CREATE TABLE products (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price REAL, brand TEXT, rating REAL, image INTEGER, detail TEXT)");
     }
 
     @Override
@@ -28,13 +28,15 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertProduct(String name, double price, String brand, float rating) {
+    public boolean insertProduct(String name, double price, String brand, float rating, int image,String detail) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("price", price);
         values.put("brand", brand);
         values.put("rating", rating);
+        values.put("image", image);
+        values.put("detail", detail);
         long result = db.insert("products", null, values);
         return result != -1;
     }
@@ -50,7 +52,9 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
                     cursor.getString(1),     // name
                     cursor.getDouble(2),
                     cursor.getString(3),
-                    cursor.getFloat(4)
+                    cursor.getFloat(4),
+                    cursor.getString(5),
+                    cursor.getString(6)
             ));
         }
 

@@ -39,7 +39,7 @@
                     android:id="@+id/delivery_to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Delivery To"
+                    android:text="@string/delivery_to"
                     android:textColor="@color/gray"
                     android:textSize="10sp" />
 
@@ -174,7 +174,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pizza"
+                            android:text="@string/pizza"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -195,7 +195,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Burger"
+                            android:text="@string/burger"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -216,7 +216,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pav Bhaji"
+                            android:text="@string/pav_bhaji"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -237,7 +237,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Momo"
+                            android:text="@string/momo"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -258,7 +258,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cake"
+                            android:text="@string/cake"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -279,7 +279,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ice Cream"
+                            android:text="@string/ice_cream"
                             android:textSize="13sp"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -338,7 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Explore"
+                android:text="@string/explore"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -364,7 +364,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Search"
+                android:text="@string/search"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -386,7 +386,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="My Order"
+                android:text="@string/my_order"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -410,7 +410,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Cart"
+                android:text="@string/cart"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -435,7 +435,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Account"
+                android:text="@string/account"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />

@@ -1,6 +1,10 @@
 package com.example.foodorderingapp.homepage;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.homepage.Product;
 
 import java.util.List;
+import java.util.Locale;
 
 public class cart extends AppCompatActivity {
 
@@ -24,6 +29,9 @@ public class cart extends AppCompatActivity {
     CartAdapter adapter;
     TextView cartTotalText,gstText,deliveryFeeText,finalAmountText;
     List<Product> cartItems;
+
+    public static final String PREFS_NAME = "AppPrefs";
+    public static final String KEY_LANGUAGE = "language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +85,26 @@ public class cart extends AppCompatActivity {
         }
         return total;
     }
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences prefs = newBase.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String language = prefs.getString(KEY_LANGUAGE, "en");
 
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        config.setLayoutDirection(locale);
+
+        Context context = newBase;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            context = newBase.createConfigurationContext(config);
+        } else {
+            newBase.getResources().updateConfiguration(config, newBase.getResources().getDisplayMetrics());
+        }
+
+        super.attachBaseContext(context);
+    }
     public void goBackToHomepage(View view) {
         Intent intent = new Intent(cart.this, homepage.class);
         startActivity(intent);

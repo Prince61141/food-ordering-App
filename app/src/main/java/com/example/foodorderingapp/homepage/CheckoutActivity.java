@@ -1,6 +1,10 @@
 package com.example.foodorderingapp.homepage;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +18,8 @@ import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
+
+import java.util.Locale;
 
 public class CheckoutActivity extends AppCompatActivity implements PaymentResultListener {
 
@@ -69,5 +75,29 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentResult
     @Override
     public void onPaymentError(int code, String response) {
         Toast.makeText(this, "Payment Failed: " + response, Toast.LENGTH_LONG).show();
+    }
+
+    public static final String PREFS_NAME = "AppPrefs";
+    public static final String KEY_LANGUAGE = "language";
+
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences prefs = newBase.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String language = prefs.getString(KEY_LANGUAGE, "en");
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        config.setLayoutDirection(locale);
+
+        Context context = newBase;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            context = newBase.createConfigurationContext(config);
+        } else {
+            newBase.getResources().updateConfiguration(config, newBase.getResources().getDisplayMetrics());
+        }
+
+        super.attachBaseContext(context);
     }
 }

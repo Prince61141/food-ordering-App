@@ -37,18 +37,18 @@
         android:padding="24dp"
         android:gravity="center">
 
-    <TextView
-        android:text="Enter OTP"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:layout_width="wrap_content"
-        android:textColor="@color/black"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/enter_otp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <EditText
+        <EditText
         android:id="@+id/otpInput"
-        android:hint="6-digit code"
+        android:hint="@string/_6_digit_code"
         android:inputType="number"
         android:maxLength="6"
         android:textColor="@color/black"
@@ -58,7 +58,7 @@
 
     <Button
         android:id="@+id/verifyOtpBtn"
-        android:text="Verify OTP"
+        android:text="@string/verify_otp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/orange"
         android:textColor="@color/white"

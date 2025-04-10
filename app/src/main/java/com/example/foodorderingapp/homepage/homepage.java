@@ -2,7 +2,9 @@ package com.example.foodorderingapp.homepage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
@@ -61,6 +63,9 @@ public class homepage extends AppCompatActivity {
     ProductDatabaseHelper dbHelper;
     ProductAdapter adapter;
     List<List<Product>> groupedProducts;
+
+    public static final String PREFS_NAME = "AppPrefs";
+    public static final String KEY_LANGUAGE = "language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,10 +152,11 @@ public class homepage extends AppCompatActivity {
         dbHelper = new ProductDatabaseHelper(this);
 
         // Insert sample products only once
-        dbHelper.insertProduct("Cheese And Corn Pizza", 244, "Puffizza", 4);
-        dbHelper.insertProduct("Mexican Green Wave", 279, "Domino's", 4);
-        dbHelper.insertProduct("Farmhouse", 299, "Pizza Hut", 4);
-        dbHelper.insertProduct("Farmhouse", 295, "Pizza Hut", 5);
+        dbHelper.insertProduct("Cheese And Corn Pizza", 244, "Puffizza", 4, R.drawable.pizza, "A delicious and cheesy pizza topped with a generous amount of sweet corn kernels, creating the perfect balance of flavors. Baked to perfection with a crispy crust, this pizza is a must-try for cheese lovers.");
+        dbHelper.insertProduct("Mexican Green Wave", 279, "Domino's", 4, R.drawable.pizza, "A spicy and flavorful Mexican-inspired pizza loaded with jalapenos, green peppers, onions, and a special blend of spices. Perfect for those who crave a zesty and bold taste, with a burst of freshness from the vegetables.");
+        dbHelper.insertProduct("Farmhouse", 299, "Pizza Hut", 4, R.drawable.burger, "A classic farmhouse pizza made with a variety of fresh vegetables like mushrooms, onions, and green peppers, all piled on top of a delicious, golden crust. Topped with melty cheese, this pizza is a savory delight that will satisfy your hunger and your taste buds.");
+        dbHelper.insertProduct("Farmhouse", 295, "Pizza Hut", 5, R.drawable.burger, "A deliciously hearty farmhouse pizza with a mix of fresh vegetables, including mushrooms, onions, green peppers, and olives. The thin, crispy crust is perfectly complemented by the rich, melted cheese and tangy tomato sauce, making it an irresistible treat for pizza lovers.");
+
 
         List<Product> allProducts = (List<Product>) dbHelper.getAllProducts();
         groupedProducts = groupProductsByTwo(allProducts);
@@ -239,6 +245,27 @@ public class homepage extends AppCompatActivity {
                 Toast.makeText(this, "Permission denied. Cannot access location.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences prefs = newBase.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String language = prefs.getString(KEY_LANGUAGE, "en");
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        config.setLayoutDirection(locale);
+
+        Context context = newBase;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            context = newBase.createConfigurationContext(config);
+        } else {
+            newBase.getResources().updateConfiguration(config, newBase.getResources().getDisplayMetrics());
+        }
+
+        super.attachBaseContext(context);
     }
 
     @Override

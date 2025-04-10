@@ -59,6 +59,9 @@
         <activity android:name=".login.NewPasswordActivity"></activity>
         <activity android:name=".login.EnterOtpActivity"></activity>
 
+        <activity android:name=".homepage.ProductDetailsActivity" />
+
+
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Profile"
+                android:text="@string/my_profile"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
-                        android:text="Name"
+                        android:text="@string/name"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -124,7 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:hint="Enter Your name"
+                        android:hint="@string/enter_your_name"
                         android:textColor="@color/black"
                         android:textColorHint="@color/gray"
                         android:textSize="16sp"
@@ -137,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
-                        android:text="Email"
+                        android:text="@string/email"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -146,7 +146,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:hint="Enter Your Email Address"
+                        android:hint="@string/enter_your_email"
                         android:focusable="false"
                         android:clickable="false"
                         android:textColor="@color/black"
@@ -160,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
-                        android:text="Username"
+                        android:text="@string/username"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -169,7 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:hint="Username"
+                        android:hint="@string/username"
                         android:textColor="@color/black"
                         android:textColorHint="@color/gray"
                         android:textSize="16sp" />
@@ -181,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
-                        android:text="Phone"
+                        android:text="@string/phone"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -190,7 +190,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:hint="Phone Number"
+                        android:hint="@string/phone_number"
                         android:textColor="@color/black"
                         android:textColorHint="@color/gray"
                         android:textSize="16sp" />
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="-6dp"
-                        android:text="Address"
+                        android:text="@string/address"
                         android:textColor="#757575"
                         android:textSize="12sp" />
 
@@ -211,7 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:hint="Enter Address"
+                        android:hint="@string/enter_address"
                         android:textColorHint="@color/gray"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -247,7 +247,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Member Since"
+                        android:text="@string/member_since"
                         android:textColor="#757575"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -285,7 +285,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Password"
+                            android:text="@string/password"
                             android:textColor="#757575"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -294,7 +294,7 @@
                         android:id="@+id/btn_change_password"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Change"
+                        android:text="@string/change"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white" />
 
@@ -307,12 +307,31 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp">
+
                 <Button
                     android:id="@+id/btn_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/orange"
-                    android:text="Submit"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <!-- Language Selector -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/lanchang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/orange"
+                    android:text="@string/select_languge"
                     android:textColor="@color/white"
                     android:textSize="16dp" />
             </LinearLayout>
