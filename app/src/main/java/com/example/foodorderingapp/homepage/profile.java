@@ -80,7 +80,6 @@ public class profile extends AppCompatActivity {
             String username = editUsername.getText().toString();
             String address = editAddress.getText().toString();
 
-
             dbHelper.upsertUser(email, name, phone,username,address);
             Toast.makeText(this, "Profile Saved", Toast.LENGTH_SHORT).show();
         });

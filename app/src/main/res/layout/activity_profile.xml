@@ -51,6 +51,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Language Selector -->
+            <Button
+                android:id="@+id/lanchang"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:backgroundTint="@color/orange"
+                app:iconPadding="5dp"
+                app:iconTint="@color/white"
+                app:icon="@drawable/translate"
+                android:gravity="center"
+                app:iconGravity="textStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.948"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.444" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -296,6 +314,7 @@
                         android:layout_height="40dp"
                         android:text="@string/change"
                         android:textAllCaps="false"
+                        android:backgroundTint="@color/orange"
                         android:textColor="@android:color/white" />
 
                 </LinearLayout>
@@ -319,28 +338,7 @@
 
             </LinearLayout>
 
-            <!-- Language Selector -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp">
-
-                <Button
-                    android:id="@+id/lanchang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/orange"
-                    android:text="@string/select_languge"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
-
-
         </LinearLayout>
-
-
 
     </android.widget.ScrollView>
 
