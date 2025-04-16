@@ -64,6 +64,9 @@ dependencies {
     implementation("com.sun.mail:android-mail:1.6.7")
     implementation("com.sun.mail:android-activation:1.6.7")
 
+    implementation("com.airbnb.android:lottie:6.1.0")
+
+
     implementation(libs.recyclerview)
     implementation(libs.firebase.inappmessaging)
     implementation(libs.play.services.location)

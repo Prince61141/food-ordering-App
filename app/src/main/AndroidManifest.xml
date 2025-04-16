@@ -62,6 +62,7 @@
         <activity android:name=".homepage.ProductDetailsActivity" />
         <activity android:name=".homepage.myorder"/>
 
+        <activity android:name=".homepage.SuccessActivity" />
 
     </application>
 
