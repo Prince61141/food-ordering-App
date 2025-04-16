@@ -44,16 +44,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Cheeseburger"
-                        android:textSize="16sp"
+                        android:text="Pizza"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:singleLine="true"
+                        android:ellipsize="end"/>
 
                     <TextView
                         android:id="@+id/product1Brand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wendy's Burger"
+                        android:text="Pizza Hut"
                         android:textSize="12sp"
                         android:textColor="#777777"
                         android:layout_marginTop="1dp"/>

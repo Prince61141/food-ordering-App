@@ -26,7 +26,7 @@
         <!-- Address Section -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -35,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/delivery_to"
                     android:layout_width="wrap_content"
@@ -59,13 +60,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_weight="1">
 
-            <Button
-                android:id="@+id/btnGetLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="-20dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableLeft="@drawable/down" />
+                <Button
+                    android:id="@+id/btnGetLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-20dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:drawableLeft="@drawable/down" />
             </LinearLayout>
 
         </LinearLayout>
@@ -75,6 +76,7 @@
             android:layout_width="24dp"
             android:layout_height="32dp"
             android:paddingTop="4dp"
+            android:id="@+id/top_cart"
             android:src="@drawable/shopping_bag" />
 
         <androidx.cardview.widget.CardView
@@ -93,7 +95,7 @@
             android:layout_height="16dp"
             android:text="0"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="12dp"
                 android:visibility="visible"/>
 
@@ -371,6 +373,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/my_order"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

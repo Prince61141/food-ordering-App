@@ -5,19 +5,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -53,10 +50,11 @@ public class homepage extends AppCompatActivity {
     private TextView location_text;
     private static final int MAX_ADDRESS_LENGTH = 30;
 
-    private LinearLayout searchItem, accountLayout, cartlayout;
+    private LinearLayout searchItem, accountLayout, cartlayout,myOrder;
     private int currentItem = 0;
     private Handler handler = new Handler(Looper.getMainLooper());
     private EditText searchBar;
+    private ImageView cart;
 
     RecyclerView recyclerView;
     TextView countCart;
@@ -149,6 +147,24 @@ public class homepage extends AppCompatActivity {
             }
         });
 
+        myOrder = findViewById(R.id.my_order);
+        myOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, myorder.class);
+                startActivity(intent);
+            }
+        });
+
+        cart = findViewById(R.id.top_cart);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, cart.class);
+                startActivity(intent);
+            }
+        });
+
         dbHelper = new ProductDatabaseHelper(this);
 
         // Insert sample products only once
@@ -156,7 +172,6 @@ public class homepage extends AppCompatActivity {
         dbHelper.insertProduct("Mexican Green Wave", 279, "Domino's", 4, R.drawable.pizza, "A spicy and flavorful Mexican-inspired pizza loaded with jalapenos, green peppers, onions, and a special blend of spices. Perfect for those who crave a zesty and bold taste, with a burst of freshness from the vegetables.");
         dbHelper.insertProduct("Farmhouse", 299, "Pizza Hut", 4, R.drawable.burger, "A classic farmhouse pizza made with a variety of fresh vegetables like mushrooms, onions, and green peppers, all piled on top of a delicious, golden crust. Topped with melty cheese, this pizza is a savory delight that will satisfy your hunger and your taste buds.");
         dbHelper.insertProduct("Farmhouse", 295, "Pizza Hut", 5, R.drawable.burger, "A deliciously hearty farmhouse pizza with a mix of fresh vegetables, including mushrooms, onions, green peppers, and olives. The thin, crispy crust is perfectly complemented by the rich, melted cheese and tangy tomato sauce, making it an irresistible treat for pizza lovers.");
-
 
         List<Product> allProducts = (List<Product>) dbHelper.getAllProducts();
         groupedProducts = groupProductsByTwo(allProducts);
@@ -214,7 +229,8 @@ public class homepage extends AppCompatActivity {
                                         if (areaName != null && zipCode != null) {
                                             location_text.setText(addressLine +  "...,\n" + zipCode);
                                         } else {
-                                            location_text.setText("Address or Zip Code not found.");
+                                            addressLine = addressLine.substring(0, MAX_ADDRESS_LENGTH);
+                                            location_text.setText(addressLine + "...,\n" + "380001");
                                         }
                                     } else {
                                         location_text.setText("Address not found.");

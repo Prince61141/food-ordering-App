@@ -17,6 +17,7 @@ import com.example.foodorderingapp.R;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Locale;
@@ -40,6 +41,33 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentResult
 
         Button btnPayNow = findViewById(R.id.btnPayNow);
         btnPayNow.setOnClickListener(v -> startPayment());
+
+        String currentDateTime = java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
+
+        SharedPreferences prefs = getSharedPreferences("OrderPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Get existing orders
+        String existingOrdersJson = prefs.getString("order_list", "[]");
+        try {
+            JSONArray orderArray = new JSONArray(existingOrdersJson);
+
+            // Create new order object
+            JSONObject orderObject = new JSONObject();
+            orderObject.put("orderId", 123);
+            orderObject.put("dateTime", currentDateTime);
+
+            // Add to array
+            orderArray.put(orderObject);
+
+            // Save updated array back
+            editor.putString("order_list", orderArray.toString());
+            editor.apply();
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Error saving order", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
 
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
     }
@@ -70,7 +98,34 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentResult
     @Override
     public void onPaymentSuccess(String razorpayPaymentID) {
         Toast.makeText(this, "Payment Successful! ID: " + razorpayPaymentID, Toast.LENGTH_LONG).show();
+        String currentDateTime = java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
+
+        SharedPreferences prefs = getSharedPreferences("OrderPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Get existing orders
+        String existingOrdersJson = prefs.getString("order_list", "[]");
+        try {
+            JSONArray orderArray = new JSONArray(existingOrdersJson);
+
+            // Create new order object
+            JSONObject orderObject = new JSONObject();
+            orderObject.put("orderId", razorpayPaymentID);
+            orderObject.put("dateTime", currentDateTime);
+
+            // Add to array
+            orderArray.put(orderObject);
+
+            // Save updated array back
+            editor.putString("order_list", orderArray.toString());
+            editor.apply();
+
+        } catch (Exception e) {
+            Toast.makeText(this, "Error saving order", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
     }
+
 
     @Override
     public void onPaymentError(int code, String response) {
